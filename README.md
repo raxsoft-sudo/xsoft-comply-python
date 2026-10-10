@@ -1,8 +1,8 @@
 # xsoft_comply Python SDK
 
-[한국어](README.ko.md) · [PyPI](https://pypi.org/project/xsoft-comply/)
+[한국어](README.ko.md) · [Product overview](https://xsoftcomply.com/en) · [PyPI](https://pypi.org/project/xsoft-comply/)
 
-The official Python SDK for [xsoft comply](https://xsoftcomply.com).
+The official Python SDK for [xsoft comply](https://xsoftcomply.com/en).
 
 The SDK collects operating records of AI execution, tool calls, decisions and human review. It does not determine whether a legal obligation applies or has been met.
 
