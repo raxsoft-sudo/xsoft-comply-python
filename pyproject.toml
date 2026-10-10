@@ -1,0 +1,53 @@
+# xsoft-comply Python SDK 패키지 설정
+#   - 외부 의존성 0 (표준 라이브러리만)
+#   - 설치·빌드 시 실행되는 코드 없음 (setup.py 없음 · PEP 621 선언만)
+#   - import 만으로는 네트워크를 열지 않음
+#   배포 절차는 PUBLISHING.md 를 참조하십시오.
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xsoft-comply"
+version = "1.0.2"
+description = "Python SDK for xsoft_comply AI governance platform (AI기본법 대응)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "xsoft", email = "contact@xsoftcomply.com" }]
+keywords = ["ai-governance", "compliance", "audit", "llm"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Logging",
+]
+# 외부 의존성 0 (표준 라이브러리만)
+dependencies = []
+
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.1"]
+openai-agents = ["openai-agents>=0.1"]
+dev = ["pytest>=7", "pytest-timeout"]
+
+[project.urls]
+Homepage = "https://xsoftcomply.com"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["xsoft_comply*"]
+
+# 시각 검사 규칙 (flake8-datetimez)
+#   시간대 정보가 없는 datetime 사용을 검사합니다. 개발용 설정이며 설치 시 적용되지 않습니다.
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["DTZ"]
